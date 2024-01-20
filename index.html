@@ -1,527 +1,657 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	
+
 <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta property="og:image" content="/assets/avatar.jpg">
-  <meta property="twitter:image" content="/assets/avatar.jpg">
-	<meta property="og:title" content="█▌▌▐││▌█▐▐││││█▌▌▐">
-	<meta id="embed-desc" property="og:description" content="~idc~">
-	<meta name="theme-color" content="#360130">
-  <style>@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans');
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="/assets/avatar.jpg">
+<meta property="twitter:image" content="/assets/avatar.jpg">
+<meta property="og:title" content="█▌▌▐││▌█▐▐││││█▌▌▐">
+<meta id="embed-desc" property="og:description" content="~idc~">
+<meta name="theme-color" content="#360130">
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans');
 
-    .text
-    {
-      position:absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center;
-      font-family: Quattrocento Sans; text-shadow: 0 0 0.100em #11188e;
-    }
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Quattrocento Sans;
+    text-shadow: 0 0 0.100em #11188e;
+  }
 
-    .box
-    {
-      position:absolute;
-      width: 50%;
-      height: 30%;
-      background-color: #22222288;
-      top: 10%;
-      left: 25%;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      border-radius: 12px;
-    }
+  .box {
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    background-color: #22222288;
+    top: 10%;
+    left: 25%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 12px;
+  }
 
-    .avatar
-    {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      -ms-transform: translate(-50%, -40%);
-      transform: translate(-50%, -40%);
-    }
-    
-    .avatar img
-    {
-      border-radius: 50%;
-      width: 200px;
-      height: 200px;
-      transition-duration: 0.6s;
-    }
+  .avatar {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    -ms-transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
+  }
 
-    .avatar img:hover
-    {
-      border-radius: 50%;
-      width: 260px;
-      height: 260px;
-      transition-duration: 0.6s;
-    }
+  .avatar img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    transition-duration: 0.6s;
+  }
 
-    .discord-info
-    {
-      position: absolute;
-      left: 50%;
-      top: 62%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      animation: colorRotate 6s linear 0s infinite;
-      text-shadow: 4px 3px #111111bd;
-    }
+  .avatar img:hover {
+    border-radius: 50%;
+    width: 260px;
+    height: 260px;
+    transition-duration: 0.6s;
+  }
 
-    .discord-info p
-    {
-      font-size: 18px;
-      left: 50%;
-      transform: translate(25%, 0%);
-    }
+  .discord-info {
+    position: absolute;
+    left: 50%;
+    top: 62%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    animation: colorRotate 6s linear 0s infinite;
+    text-shadow: 4px 3px #111111bd;
+  }
 
-    .buttons
-    {
-      position:absolute;
-      top: 57%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      color: rgb(255, 255, 255);
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 22px;
-      transition-duration: 0.4s;
-    }
+  .discord-info p {
+    font-size: 18px;
+    left: 50%;
+    transform: translate(25%, 0%);
+  }
 
-    .buttons a
-    {
-      display: inline-block;
-      text-align: center;
-      font-size: 1em;
-      border-top: 2px solid #fff;
-      border-bottom: 2px solid #fff;
-      text-transform: lowercase;
-      text-decoration: none;
-      font-weight: 500;
-      margin-top: 10px;
-      color: #fff;
-      letter-spacing: 2px;
-      transition: 0.4s;
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #888 , 0 0 40px #888;
-      padding: 8px 18px;
-    }
+  .buttons {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    transition-duration: 0.4s;
+  }
 
-    .buttons a:hover
-    {
-      letter-spacing: 10px;
-      font-size: 1.2em;
-      cursor: crosshair;
-    }
+  .buttons a {
+    display: inline-block;
+    text-align: center;
+    font-size: 1em;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    text-transform: lowercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: 0.4s;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #888, 0 0 40px #888;
+    padding: 8px 18px;
+  }
 
-    .buttons2
-    {
-      position:absolute;
-      top: 63%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      color: rgb(0, 0, 0);
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 22px;
-      transition-duration: 0.4s;
-    }
+  .buttons a:hover {
+    letter-spacing: 10px;
+    font-size: 1.2em;
+    cursor: crosshair;
+  }
 
-    .buttons2 a
-    {
-      display: inline-block;
-      font-size: 1em;
-      border-top: 2px solid #fff;
-      border-bottom: 2px solid #fff;
-      text-transform: lowercase;
-      text-decoration: none;
-      font-weight: 500;
-      margin-top: 10px;
-      color: #fff;
-      letter-spacing: 2px;
-      transition: 0.4s;
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #888 , 0 0 40px #888;
-      padding: 8px 18px;
-    }
+  .buttons2 {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    transition-duration: 0.4s;
+  }
 
-    .buttons2 a:hover
-    {
-      letter-spacing: 10px;
-      font-size: 1.2em;
-      cursor: crosshair;
-    }
+  .buttons2 a {
+    display: inline-block;
+    font-size: 1em;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    text-transform: lowercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: 0.4s;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #888, 0 0 40px #888;
+    padding: 8px 18px;
+  }
 
-    .buttons3
-    {
-      position:absolute;
-      top: 69%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      color: rgb(0, 0, 0);
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 22px;
-      transition-duration: 0.4s;
-    }
+  .buttons2 a:hover {
+    letter-spacing: 10px;
+    font-size: 1.2em;
+    cursor: crosshair;
+  }
 
-    .buttons3 a
-    {
-      display: inline-block;
-      font-size: 1em;
-      border-top: 2px solid #fff;
-      border-bottom: 2px solid #fff;
-      text-transform: lowercase;
-      text-decoration: none;
-      font-weight: 500;
-      margin-top: 10px;
-      color: #fff;
-      letter-spacing: 2px;
-      transition: 0.4s;
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #888 , 0 0 40px #888;
-      padding: 8px 18px;
-    }
+  .buttons3 {
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    transition-duration: 0.4s;
+  }
 
-    .buttons3 a:hover
-    {
-      letter-spacing: 10px;
-      font-size: 1.2em;
-      cursor: crosshair;
-    }
+  .buttons3 a {
+    display: inline-block;
+    font-size: 1em;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    text-transform: lowercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: 0.4s;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #888, 0 0 40px #888;
+    padding: 8px 18px;
+  }
 
-    .buttons4
-    {
-      position:absolute;
-      top: 75%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      color: rgb(0, 0, 0);
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 22px;
-      transition-duration: 0.4s;
-    }
+  .buttons3 a:hover {
+    letter-spacing: 10px;
+    font-size: 1.2em;
+    cursor: crosshair;
+  }
 
-    .buttons4 a
-    {
-      display: inline-block;
-      font-size: 1em;
-      border-top: 2px solid #fff;
-      border-bottom: 2px solid #fff;
-      text-transform: lowercase;
-      text-decoration: none;
-      font-weight: 500;
-      margin-top: 10px;
-      color: #fff;
-      letter-spacing: 2px;
-      transition: 0.4s;
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #888 , 0 0 40px #888;
-      padding: 8px 18px;
-    }
+  .buttons4 {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    transition-duration: 0.4s;
+  }
 
-    .buttons4 a:hover
-    {
-      letter-spacing: 10px;
-      font-size: 1.2em;
-      cursor: crosshair;
-    }
+  .buttons4 a {
+    display: inline-block;
+    font-size: 1em;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    text-transform: lowercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: 0.4s;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #888, 0 0 40px #888;
+    padding: 8px 18px;
+  }
 
-    .color
-    {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #242424;
-      mix-blend-mode: overlay;
-    }
+  .buttons4 a:hover {
+    letter-spacing: 10px;
+    font-size: 1.2em;
+    cursor: crosshair;
+  }
 
-    #videoplayer
-    {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 0;
-      min-width: 100%;
-      min-height: 100%;
-      overflow: hidden;
-      filter: blur(0.200rem);
-    }
-    
-    #rawvideo
-    {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      filter: blur(0.200rem);
-    }
+  .color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #242424;
+    mix-blend-mode: overlay;
+  }
 
-    #overlay-toggle
-    {
-      position:absolute;
-      display:none;
-    }
+  #videoplayer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    min-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    filter: blur(0.200rem);
+  }
 
-    .text h1
-    {
-      font-size: 42px;
-      color: #FFFFFF96;
-      text-shadow: 2px 3px #888888;
-    }
+  #rawvideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(0.200rem);
+  }
 
-    .discord-center h2
-    {
-      font-size: 30px;
-      animation: colorRotate 6s linear 0s infinite;
-    }
+  #overlay-toggle {
+    position: absolute;
+    display: none;
+  }
 
-    .discord-ico
-    {
-      position: absolute;
-      left: -20%;
-      top: 60%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-40%, -50%);
-    }
+  .text h1 {
+    font-size: 42px;
+    color: #FFFFFF96;
+    text-shadow: 2px 3px #888888;
+  }
 
-    .discord-ico img
-    {
-      height: 63%;
-      width: 63%;
-      opacity: 65%;
-    }
+  .discord-center h2 {
+    font-size: 30px;
+    animation: colorRotate 6s linear 0s infinite;
+  }
 
-    .loading
-    {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 9999;
-    }
+  .discord-ico {
+    position: absolute;
+    left: -20%;
+    top: 60%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-40%, -50%);
+  }
 
-    .random
-    {
-      position: absolute;
-      top: 90%;
-      left: 50%;
-      -ms-transform: translate(-50%, -60%);
-      transform: translate(-50%, -60%);
-      width: 90%;
-      height: 100px;
-      font-size: 24px;
-      font-family: Quattrocento Sans;
-      text-shadow: 4px 3px #111111bd;
-      Filter: blur(0.033em);
-      animation: colorRotate 6s linear 0s infinite;
+  .discord-ico img {
+    height: 63%;
+    width: 63%;
+    opacity: 65%;
+  }
+
+  .loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+
+  .random {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    -ms-transform: translate(-50%, -60%);
+    transform: translate(-50%, -60%);
+    width: 90%;
+    height: 100px;
+    font-size: 24px;
+    font-family: Quattrocento Sans;
+    text-shadow: 4px 3px #111111bd;
+    Filter: blur(0.033em);
+    animation: colorRotate 6s linear 0s infinite;
+  }
+
+  .loading-text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -ms-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    width: 800%;
+    height: 75px;
+    line-height: 75px;
+    font-size: 42px;
+    animation: colorRotate 6s linear 0s infinite;
+  }
+
+  @keyframes colorRotate {
+    from {
+      color: #33ff00;
     }
 
-    .loading-text
-    {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      -ms-transform: translate(-50%, -100%);
-      transform: translate(-50%, -100%);
-      width: 800%;
-      height: 75px;
-      line-height: 75px;
-      font-size: 42px;
-      animation: colorRotate 6s linear 0s infinite;
-    }
-      
-    @keyframes colorRotate
-    {
-      from
-      {
-        color: #33ff00;
-      }
-      10%
-      {
-        color: #ffe600;
-      }
-      50% 
-      {
-        color: red;
-      }
-      75%
-      {
-        color: #008cff;
-      }
-      100%
-      {
-        color: #33ff00;
-      }
+    10% {
+      color: #ffe600;
     }
 
-    .bg
-    {
-      position: fixed;
-      top: -50%;
-      left: -50%;
-      right: -50%;
-      bottom: -50%;
-      width: 200%;
-      height: 200vh;
-      background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
-      background-repeat: repeat;
-      animation: bg-animation .2s infinite;
-      opacity: .9;
-      visibility: visible;
+    50% {
+      color: red;
     }
 
-    @keyframes bg-animation
-    {
-      0% { transform: translate(0,0) }
-      10% { transform: translate(-5%,-5%) }
-      20% { transform: translate(-10%,5%) }
-      30% { transform: translate(5%,-10%) }
-      40% { transform: translate(-5%,15%) }
-      50% { transform: translate(-10%,5%) }
-      60% { transform: translate(15%,0) }
-      70% { transform: translate(0,10%) }
-      80% { transform: translate(-15%,0) }
-      90% { transform: translate(10%,5%) }
-      100% { transform: translate(5%,0) }
+    75% {
+      color: #008cff;
     }
 
-    html
-    {
-      height: 100%;
-      background: linear-gradient(#123 30%, #667);
-      overflow: hidden;
+    100% {
+      color: #33ff00;
+    }
+  }
+
+  .bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    visibility: visible;
+  }
+
+  @keyframes bg-animation {
+    0% {
+      transform: translate(0, 0)
     }
 
-    .snow, .snow:before, .snow:after
-    {
-      position: absolute;
-      top: -600px;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-image: radial-gradient(3px 3px at 62px 160px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 119px 425px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 477px 329px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 384px 549px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 290px 84px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 561px 55px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 313px 110px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 560px 130px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 383px 141px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 366px 301px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 202px 367px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 27px 146px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 578px 394px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 187px 473px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 477px 296px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 250px 237px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 364px 95px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 27px 441px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 128px 406px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 132px 403px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 453px 197px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 548px 55px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 125px 341px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 15px 38px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 364px 159px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 125px 267px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 414px 351px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 53px 558px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 234px 156px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 200px 389px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 472px 361px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 413px 463px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 47px 397px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 342px 297px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 503px 62px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 534px 498px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 309px 39px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 293px 339px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 351px 526px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 314px 54px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 285px 438px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 299px 145px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 126px 250px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 433px 127px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 288px 166px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 325px 417px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 408px 535px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 386px 573px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 553px 500px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 556px 572px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 580px 543px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 295px 212px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 552px 278px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 183px 367px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 399px 187px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 5px 386px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 318px 106px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 104px 525px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 306px 363px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 267px 30px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 396px 589px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 509px 411px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 179px 547px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 240px 104px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 291px 535px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 323px 579px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 217px 73px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 111px 411px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 410px 388px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 237px 101px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0));
-      background-size: 600px 600px;
-      animation: snow 10s linear infinite;
-      animation-direction: reverse;
-      Filter: blur(3px);
-      content: "";
-      opacity: 0.5;
+    10% {
+      transform: translate(-5%, -5%)
     }
 
-    .snow:after
-    {
-      margin-left: -200px;
-      opacity: 0.4;
-      animation-duration: 12s;
-      animation-direction: reverse;
-      filter: blur(1.5px);
+    20% {
+      transform: translate(-10%, 5%)
     }
 
-    .snow:before
-    {
-      animation-duration: 14s;
-      animation-direction: reverse;
-      margin-left: -300px;
-      opacity: 0.25;
-      filter: blur(0.5px);
+    30% {
+      transform: translate(5%, -10%)
     }
 
-    @keyframes snow
-    {
-      to
-      {
-        transform: translateY(600px);
-      }
+    40% {
+      transform: translate(-5%, 15%)
     }
 
-    .loading-text span
-    {
-      display: inline-block;
-      margin: 0 0px;
-      font-family: "Quattrocento Sans", sans-serif;
-      animation: colorRotate 6s linear 0s infinite;  
+    50% {
+      transform: translate(-10%, 5%)
     }
 
-    .loading-text span:nth-child(1)
-    {
+    60% {
+      transform: translate(15%, 0)
+    }
+
+    70% {
+      transform: translate(0, 10%)
+    }
+
+    80% {
+      transform: translate(-15%, 0)
+    }
+
+    90% {
+      transform: translate(10%, 5%)
+    }
+
+    100% {
+      transform: translate(5%, 0)
+    }
+  }
+
+  html {
+    height: 100%;
+    background: linear-gradient(#123 30%, #667);
+    overflow: hidden;
+  }
+
+  .snow,
+  .snow:before,
+  .snow:after {
+    position: absolute;
+    top: -600px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: radial-gradient(3px 3px at 62px 160px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 119px 425px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 477px 329px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 384px 549px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 290px 84px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 561px 55px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 313px 110px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 560px 130px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 383px 141px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 366px 301px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 202px 367px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 27px 146px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 578px 394px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 187px 473px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 477px 296px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 250px 237px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 364px 95px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 27px 441px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 128px 406px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 132px 403px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 453px 197px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 548px 55px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 125px 341px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 15px 38px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 364px 159px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 125px 267px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 414px 351px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 53px 558px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 234px 156px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 200px 389px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 472px 361px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 413px 463px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 47px 397px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 342px 297px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 503px 62px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 534px 498px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 309px 39px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 293px 339px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 351px 526px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 314px 54px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 285px 438px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 299px 145px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 126px 250px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 433px 127px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 288px 166px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 325px 417px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 408px 535px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 386px 573px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 553px 500px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 556px 572px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 580px 543px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 295px 212px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 552px 278px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 183px 367px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 399px 187px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 5px 386px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 318px 106px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 104px 525px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 306px 363px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 267px 30px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 396px 589px, white 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 509px 411px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 179px 547px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 240px 104px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 291px 535px, rgba(255, 255, 255, 0.8) 50%, rgba(0, 0, 0, 0)), radial-gradient(4px 4px at 323px 579px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(5px 5px at 217px 73px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 111px 411px, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 410px 388px, rgba(255, 255, 255, 0.6) 50%, rgba(0, 0, 0, 0)), radial-gradient(6px 6px at 237px 101px, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0));
+    background-size: 600px 600px;
+    animation: snow 10s linear infinite;
+    animation-direction: reverse;
+    Filter: blur(3px);
+    content: "";
+    opacity: 0.5;
+  }
+
+  .snow:after {
+    margin-left: -200px;
+    opacity: 0.4;
+    animation-duration: 12s;
+    animation-direction: reverse;
+    filter: blur(1.5px);
+  }
+
+  .snow:before {
+    animation-duration: 14s;
+    animation-direction: reverse;
+    margin-left: -300px;
+    opacity: 0.25;
+    filter: blur(0.5px);
+  }
+
+  @keyframes snow {
+    to {
+      transform: translateY(600px);
+    }
+  }
+
+  .loading-text span {
+    display: inline-block;
+    margin: 0 0px;
+    font-family: "Quattrocento Sans", sans-serif;
+    animation: colorRotate 6s linear 0s infinite;
+  }
+
+  .loading-text span:nth-child(1) {
+    filter: blur(0px);
+    animation: blur-text 1.5s 0s infinite linear alternate;
+  }
+
+  .loading-text span:nth-child(2) {
+    filter: blur(0px);
+    animation: blur-text 1.5s 0.2s infinite linear alternate;
+  }
+
+  .loading-text span:nth-child(3) {
+    filter: blur(0px);
+    animation: blur-text 1.5s 0.4s infinite linear alternate;
+  }
+
+  .loading-text span:nth-child(4) {
+    filter: blur(0px);
+    animation: blur-text 1.5s 0.6s infinite linear alternate;
+  }
+
+  .loading-text span:nth-child(5) {
+    filter: blur(0px);
+    animation: blur-text 1.5s 0.8s infinite linear alternate;
+  }
+
+  .loading-text span:nth-child(6) {
+    filter: blur(0px);
+    animation: blur-text 1.5s 1s infinite linear alternate;
+  }
+
+  .loading-text span:nth-child(7) {
+    filter: blur(0px);
+    animation: blur-text 1.5s 1.2s infinite linear alternate;
+  }
+
+  @keyframes blur-text {
+    0% {
       filter: blur(0px);
-      animation: blur-text 1.5s 0s infinite linear alternate;
     }
 
-    .loading-text span:nth-child(2)
-    {
-      filter: blur(0px);
-      animation: blur-text 1.5s 0.2s infinite linear alternate;
+    100% {
+      filter: blur(4px);
+    }
+  }
+
+  @font-face {
+    font-family: Quattrocento Sans;
+    src: url(https://fonts.gstatic.com/s/quattrocentosans/v18/va9c4lja2NVIDdIAAoMR5MfuElaRB0zHt0_uHA.woff2)
+  }
+
+  @font-face {
+    font-family: Quattrocento Sans;
+    src: url(https://fonts.gstatic.com/s/quattrocentosans/v18/va9c4lja2NVIDdIAAoMR5MfuElaRB0zHt0_uHA.woff2)
+  }
+
+  html {
+    font-family: mono
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0
+  }
+
+  body {
+    background: #111
+  }
+
+  #overlay-toggle {
+    position: absolute;
+    display: none
+  }
+
+  .debold {
+    font-weight: 400
+  }
+
+  .negger {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+
+  .overlay {
+    z-index: 1;
+    background-color: #000
+  }
+
+  .overlay label {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vw;
+    color: #fff;
+    font-size: 2rem
+  }
+
+  .no-hover {
+    display: block
+  }
+
+  .hover {
+    display: none
+  }
+
+  .fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100vh;
+    min-width: 100vw
+  }
+
+  .text-content {
+    background: transparent;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    color: #fff
+  }
+
+  .text-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: purple
+  }
+
+  .text-content p {
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 31px;
+    padding-left: 10px;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 0;
+    color: silver;
+    display: flex
+  }
+
+  .text-content a {
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 31px;
+    padding-left: 10px;
+    font-size: 1.3rem;
+    line-height: 0;
+    color: #ccc;
+    display: flex
+  }
+
+  #overlay-toggle:checked~.overlay {
+    animation-fill-mode: forwards;
+    animation-name: fade, hide;
+    animation-delay: 0s, 0ms;
+    animation-duration: 0ms, 0ms
+  }
+
+  #overlay-toggle:checked~.overlay label {
+    animation-fill-mode: forwards;
+    animation-name: fade;
+    animation-delay: 0s;
+    animation-duration: 0ms
+  }
+
+  @media(hover:hover) {
+    .hover {
+      display: block
     }
 
-    .loading-text span:nth-child(3)
-    {
-      filter: blur(0px);
-      animation: blur-text 1.5s 0.4s infinite linear alternate;
+    .no-hover {
+      display: none
     }
+  }
 
-    .loading-text span:nth-child(4)
-    {
-      filter: blur(0px);
-      animation: blur-text 1.5s 0.6s infinite linear alternate;
+  @keyframes fade {
+    to {
+      opacity: 0
     }
+  }
 
-    .loading-text span:nth-child(5)
-    {
-      filter: blur(0px);
-      animation: blur-text 1.5s 0.8s infinite linear alternate;
+  @keyframes hide {
+    to {
+      visibility: hidden
     }
+  }
+</style>
 
-    .loading-text span:nth-child(6)
-    {
-      filter: blur(0px);
-      animation: blur-text 1.5s 1s infinite linear alternate;
-    }
-  
-    .loading-text span:nth-child(7)
-    {
-      filter: blur(0px);
-      animation: blur-text 1.5s 1.2s infinite linear alternate;
-    }
-
-    @keyframes blur-text
-    {
-    0%
-      {
-        filter: blur(0px);
-      }
-      100%
-      {
-        filter: blur(4px);
-      }
-    }
-
-    @font-face{font-family:Quattrocento Sans;src:url(https://fonts.gstatic.com/s/quattrocentosans/v18/va9c4lja2NVIDdIAAoMR5MfuElaRB0zHt0_uHA.woff2)}@font-face{font-family:Quattrocento Sans;src:url(https://fonts.gstatic.com/s/quattrocentosans/v18/va9c4lja2NVIDdIAAoMR5MfuElaRB0zHt0_uHA.woff2)}html{font-family:mono}*,*::after,*::before{box-sizing:inherit;margin:0;padding:0}body{background:#111}#overlay-toggle{position:absolute;display:none}.debold{font-weight:400}.negger{display:flex;align-items:center;justify-content:center}.overlay{z-index:1;background-color:#000}.overlay label{display:grid;place-items:center;width:100vw;height:100vw;color:#fff;font-size:2rem}.no-hover{display:block}.hover{display:none}.fullscreen{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);min-height:100vh;min-width:100vw}.text-content{background:transparent;display:grid;place-content:center;text-align:center;color:#fff}.text-content h1{font-size:3rem;font-weight:800;color:purple}.text-content p{padding-top:30px;padding-right:10px;padding-bottom:31px;padding-left:10px;font-size:1.7rem;font-weight:500;line-height:0;color:silver;display:flex}.text-content a{padding-top:30px;padding-right:10px;padding-bottom:31px;padding-left:10px;font-size:1.3rem;line-height:0;color:#ccc;display:flex}#overlay-toggle:checked~.overlay{animation-fill-mode:forwards;animation-name:fade,hide;animation-delay:0s,0ms;animation-duration:0ms,0ms}#overlay-toggle:checked~.overlay label{animation-fill-mode:forwards;animation-name:fade;animation-delay:0s;animation-duration:0ms}@media(hover:hover){.hover{display:block}.no-hover{display:none}}@keyframes fade{to{opacity:0}}@keyframes hide{to{visibility:hidden}}</style>
-
-  <title>http://127.0.0.1:5500</title>
-  <link rel="icon" href="/assets/world.GIF">
-  <script>position = 0;
-   function title(msg) {
-       document.title = msg.substring(position, msg.length) + msg.substring(0, position);
-       position++;
-       if (position > msg.length) position = 0
-       window.setTimeout("title(\"ꜱᴋ1ᴅ                \")", 222);
-   }
-   title("ꜱᴋ1ᴅ                ");</script>
+<title>http://127.0.0.1:5500</title>
+<link rel="icon" href="/assets/world.GIF">
+<script>position = 0;
+  function title(msg) {
+    document.title = msg.substring(position, msg.length) + msg.substring(0, position);
+    position++;
+    if (position > msg.length) position = 0
+    window.setTimeout("title(\"ꜱᴋ1ᴅ                \")", 222);
+  }
+  title("ꜱᴋ1ᴅ                ");</script>
 
 
 
@@ -539,14 +669,14 @@
     <div class="discord-info">
       <div class="discord-center">
         <div class="loading">
-		      <div class="loading-text">
-		        <span class="loading-text-words">D</span>
-		        <span class="loading-text-words">R</span>
-		        <span class="loading-text-words">1</span>
-		        <span class="loading-text-words">V</span>
-		        <span class="loading-text-words">E</span>
-		      </div>
-		    </div>
+          <div class="loading-text">
+            <span class="loading-text-words">D</span>
+            <span class="loading-text-words">R</span>
+            <span class="loading-text-words">1</span>
+            <span class="loading-text-words">V</span>
+            <span class="loading-text-words">E</span>
+          </div>
+        </div>
       </div>
       <p>dr1ve</p>
       <div class="discord-ico">
@@ -558,9 +688,9 @@
     </div>
   </div>
 
-    <div class="text">
-      <h1>𝕸𝖔𝖙𝖎𝖛𝖆𝖙𝖊𝖉 𝕭𝖞 𝕿𝖍𝖊 𝕱𝖊𝖆𝖗 𝕺𝖋 𝕭𝖊𝖎𝖓𝖌 𝕬𝖛𝖊𝖗𝖆𝖌𝖊.</h1>
-    </div>
+  <div class="text">
+    <h1>𝕸𝖔𝖙𝖎𝖛𝖆𝖙𝖊𝖉 𝕭𝖞 𝕿𝖍𝖊 𝕱𝖊𝖆𝖗 𝕺𝖋 𝕭𝖊𝖎𝖓𝖌 𝕬𝖛𝖊𝖗𝖆𝖌𝖊.</h1>
+  </div>
 
   <div class="buttons">
     <a href="https://www.instagram.com/drivethrufocus/">N/A</a>
@@ -577,96 +707,99 @@
   <div class="buttons4">
     <a href="https://">N/A</a>
   </div>
- <!-- <div class="buttons2">
+  <!-- <div class="buttons2">
     <a href="https://illegal.wiki/sk1d">socials</a>
   </div> -->
 
-<!--  <div class="buttons3">
+  <!--  <div class="buttons3">
     <a href="https://dontasktoask.com/">don't ask to ask</a>
   </div> -->
-<!--
+  <!--
   <div class="buttons4">
     <a href="https://ogusers.gg/sk1d">OGUsers.gg</a>
     <a href="https://monarchforums.cc/index.php?members/sk1d.321/">MonarchForums.cc</a>
     <a href="https://vacban.wtf/members/90111/">VACban.wtf</a>
   </div>
 -->
-    <a href="https://en.pronouns.page/@sk1d_eu" rel="me"></a>
-        <a href="/" rel="me"></a>
+  <a href="https://en.pronouns.page/@sk1d_eu" rel="me"></a>
+  <a href="/" rel="me"></a>
   <script>var messages =
-    [
-      "eternally confused",
-      "EVERYBODY LIES NO EXCEPTIONS",
-      "NDWDSADWDF",
-      "[ ]",
-      "{ }",
-      "Seven11",
-      "nine out of eleven have bad taste.",
-      "it's alright, nothing 9 cups of coffee can't fix.",
-      "people be actin' like they never seen a weirdo before",
-      "Don't cry when I die, I hated it here.",
-      "Don’t make it look like you got Photoshop for Christmas.",
-      "Music is a constant inspiration. Listen to it.",
-      "If you can't join a Club, create one.",
-      "Don’t use defaults; make decisions.",
-      "Look at the sky.",
-      "When in doubt, edit it out.",
-      "On process: —Find a way out of your head.",
-      "I want to create things, even if nobody cares.",
-      "Every problem comes with thoughts.",
-      "It's the pleasure in slowly crafting together something which only you would do.",
-      "I don't devide my Life between Labour and Pleasure.",
-      "If there is something in common about my sentences, it is the roughness; they are all unrefined. Very often there is something wrong with them.",
-      "hate everyone.",
-      "peace is not always a option",
-      "Same shit different time.",
-      "NG+, back to Level one.",
-      "depression won't kill you, loneliness will.",
-      "it begins with a simple kiss and ends in cannibalism.",
-      "#DoACrime",
-      "i took the red pill and it was only a placebo.",
-      "again. again. again. again. again. again. again. again. again. again. again. again. again. I SAW YOU IN MY DREAMS I THOUGHT IT WAS REAL. again. again. again.again. again. again.",
-      "I SAW YOU IN MY DREAMS I THOUGHT IT WAS REAL.",
-      "again.",
-      "school kills artists.",
-      "why do i see a god in the mirror?",
-      "idc, fuck everyone.exe",
-      "chronically online individual",
-      "People will judge you no matter what you do.",
-      "IDEGAF",
-      "i look like Dylan Klebold but you will never see me banging."
-    ];
-    document.getElementById("message").innerHTML = messages[Math.floor(Math.random()*messages.length)];</script>
+      [
+        "eternally confused",
+        "EVERYBODY LIES NO EXCEPTIONS",
+        "NDWDSADWDF",
+        "[ ]",
+        "{ }",
+        "Seven11",
+        "nine out of eleven have bad taste.",
+        "it's alright, nothing 9 cups of coffee can't fix.",
+        "people be actin' like they never seen a weirdo before",
+        "Don't cry when I die, I hated it here.",
+        "Don’t make it look like you got Photoshop for Christmas.",
+        "Music is a constant inspiration. Listen to it.",
+        "If you can't join a Club, create one.",
+        "Don’t use defaults; make decisions.",
+        "Look at the sky.",
+        "When in doubt, edit it out.",
+        "On process: —Find a way out of your head.",
+        "I want to create things, even if nobody cares.",
+        "Every problem comes with thoughts.",
+        "It's the pleasure in slowly crafting together something which only you would do.",
+        "I don't devide my Life between Labour and Pleasure.",
+        "If there is something in common about my sentences, it is the roughness; they are all unrefined. Very often there is something wrong with them.",
+        "hate everyone.",
+        "peace is not always a option",
+        "Same shit different time.",
+        "NG+, back to Level one.",
+        "depression won't kill you, loneliness will.",
+        "it begins with a simple kiss and ends in cannibalism.",
+        "#DoACrime",
+        "i took the red pill and it was only a placebo.",
+        "again. again. again. again. again. again. again. again. again. again. again. again. again. I SAW YOU IN MY DREAMS I THOUGHT IT WAS REAL. again. again. again.again. again. again.",
+        "I SAW YOU IN MY DREAMS I THOUGHT IT WAS REAL.",
+        "again.",
+        "school kills artists.",
+        "why do i see a god in the mirror?",
+        "idc, fuck everyone.exe",
+        "chronically online individual",
+        "People will judge you no matter what you do.",
+        "IDEGAF",
+        "i look like Dylan Klebold but you will never see me banging."
+      ];
+    document.getElementById("message").innerHTML = messages[Math.floor(Math.random() * messages.length)];</script>
 
   <script>
     var videoList =
-    [
-      "video/BadBlood.mp4",
-      "video/TOXIC.mp4",
-      "video/DVRST.mp4",
-      "video/GauzeValley.mp4",
-      "video/SoulSnatch.mp4",
-      "video/NightDrive.mp4",
-      "video/GHOST.mp4"
-    ];
-    videoList.sort(function(a, b) {return 0.5 - Math.random()});
+      [
+        "video/BadBlood.mp4",
+        "video/TOXIC.mp4",
+        "video/DVRST.mp4",
+        "video/GauzeValley.mp4",
+        "video/SoulSnatch.mp4",
+        "video/NightDrive.mp4",
+        "video/GHOST.mp4"
+      ];
+    videoList.sort(function (a, b) {return 0.5 - Math.random()});
     document.querySelector("#videoplayer").innerHTML = "<video id='rawvideo' muted autoplay poster='' id='bgvid' loop><source src='" + videoList[0] + "' type='video/mp4'><\/video>";
-    var vid=document.getElementById("rawvideo");
-	  vid.disablePictureInPicture = true;
-	  window.onclick = function ()
-    {
-	    document.querySelector("#rawvideo").muted = false;
+    var vid = document.getElementById("rawvideo");
+    vid.disablePictureInPicture = true;
+    window.onclick = function () {
+      document.querySelector("#rawvideo").muted = false;
       document.querySelector("#rawvideo").volume = 0.42;
     };
   </script>
 
   <input type="checkbox" autocomplete="off" id="overlay-toggle">
   <div class="overlay fullscreen">
-    <label for="overlay-toggle" onclick="if (!window.__cfRLUnblockHandlers)  false; audioPlay();videoPlay()" data-cf-modified-304bdc40906b714d761ae8fd-="">
-      <span class="no-hover" style="font-family: Quattrocento Sans; font-size: 0.6em;"> your system is not supported. </span>
-      <span class="hover" style="font-family: Quattrocento Sans; font-size: 0.6em;"> print("you are now entering restricted data files"); </span>
+    <label for="overlay-toggle" onclick="if (!window.__cfRLUnblockHandlers)  false; audioPlay();videoPlay()"
+      data-cf-modified-304bdc40906b714d761ae8fd-="">
+      <span class="no-hover" style="font-family: Quattrocento Sans; font-size: 0.6em;"> your system is not supported.
+      </span>
+      <span class="hover" style="font-family: Quattrocento Sans; font-size: 0.6em;"> print("you are now entering
+        restricted data files"); </span>
     </label>
   </div>
 
 </body>
+
 </html>
