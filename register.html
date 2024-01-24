@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1 style="margin-left: -40px;">Create an Account</h1>
+    <form id="registrationForm" method="POST" onsubmit="submitRegistrationForm(event)">
+        <div class="inputbox">
+            <ion-icon name="person-outline"></ion-icon>
+            <input type="text" id="username" required>
+            <label for="username">Username</label>
+        </div>
+        <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" id="email" required>
+            <label for="email">Email</label>
+        </div>
+        <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" id="password" required>
+            <label for="password">Password</label>
+        </div>
+<button type="submit" onclick="if(document.getElementById('username').value && document.getElementById('email'). value && document.getElementById('password').value) { submitRegistrationForm(); window.location.href='Page-2.html'}">Register</button>
+    </form>
+    <script>
+        async function submitRegistrationForm(event) {
+            event.preventDefault();
+            const data = {
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
+    </script>
+</body>
+
+</html>
