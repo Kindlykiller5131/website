@@ -1,68 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <h1 style="margin-left: -40px;">Create an Account</h1>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1 style="margin-left: -40px">Create an Account</h1>
     <form>
-        <div class="inputbox">
-            <ion-icon name="person-outline"></ion-icon>
-            <input type="text" id="username" required>
-            <label for="username">Username</label>
-        </div>
-        <div class="inputbox">
-            <ion-icon name="mail-outline"></ion-icon>
-            <input type="email" id="email" required>
-          <label for="email">Email</label>
-        </div>
-        <div class="inputbox">  
-            <ion-icon name="lock-closed-outline"></ion-icon>
-            <input type="password" id="password" required>
-            <label for="password">Password</label>
-        </div>
-        <button type="button" onclick="submitRegistrationForm()">Register</button>
-      <input type="hidden" id="userData">
+      <div class="inputbox">
+        <ion-icon name="person-outline"></ion-icon>
+        <input type="text" id="username" required />
+        <label for="username">Username</label>
+      </div>
+      <div class="inputbox">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input type="email" id="email" required />
+        <label for="email">Email</label>
+      </div>
+      <div class="inputbox">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" id="password" required />
+        <label for="password">Password</label>
+      </div>
+      <button type="button" onclick="submitRegistrationForm()">Register</button>
+      <input type="hidden" id="userData" />
     </form>
     <script>
-        function submitRegistrationForm() {
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+      function submitRegistrationForm() {
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-            // Store user registration data locally in a JSON file
-            const userData = {
-                username: username,
-                email: email,
-                password: password
-            };
+        // Store user registration data locally in a JSON file
+        const userData = {
+          username: username,
+          email: email,
+          password: password,
+        };
 
-          // Convert the JavaScript object to a JSON string
-          const userDataJson = JSON.stringify(userData);
+        // Convert the JavaScript object to a JSON string
+        const userDataJson = JSON.stringify(userData);
 
-          // Send the user data to the server using the Fetch API
-          fetch('/api/register', {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: userDataJson
+        // Send the user data to the server using the Fetch API
+        fetch("/api/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: userDataJson,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Handle the response from the server
+            console.log("Server response:", data);
+            // Redirect to the Login Page (Page-2.html)
+            window.location.href = "Page-2.html";
           })
-          .then(response => response.json())
-          .then(data => {
-              // Handle the response from the server
-              console.log('Server response:', data);
-              // Redirect to the Login Page (Page-2.html)
-              window.location.href = 'Page-2.html';
-          })
-          .catch(error => {
-              // Handle errors
-              console.error('Error:', error);
+          .catch((error) => {
+            // Handle errors
+            console.error("Error:", error);
           });
-          }  
+      }
     </script>
-</body>
+  </body>
 </html>
