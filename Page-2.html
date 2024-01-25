@@ -1,60 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+ <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <section>
-        <form>
-            <h1>Login</h1>
-            <div class="inputbox">
-                <ion-icon name="mail-outline"></ion-icon>
-                <input type="email" required>
-                <label for="">Email</label>
-            </div>
-            <div class="inputbox">
-                <ion-icon name="lock-closed-outline"></ion-icon>
-                <input type="password" required>
-                <label for="">Password</label>
-            </div>
-            <div class="forget">
-                <label for=""><input type="checkbox">Remember Me</label>
-              <a href="#">Forget Password</a>
-            </div>
-<button onclick="validateLogin()">Log in</button>
+ <section>
+    <form>
+      <h1>Login</h1>
+      <div class="inputbox">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input type="email" id="emailInput" required>
+        <label for="">Email</label>
+      </div>
+      <div class="inputbox">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" id="passwordInput" required>
+        <label for="">Password</label>
+      </div>
+      <div class="forget">
+        <label for=""><input type="checkbox">Remember Me</label>
+        <a href="#">Forget Password</a>
+      </div>
+      <button onclick="validateLogin()">Log in</button>
+      <div class="register">
+        <p>Don't have an account? <a href="register.html">Register</a></p>
+      </div>
+    </form>
+ </section>
 
  <script>
-  function validateLogin() {
-    var email = document.getElementById('emailInput').value;
-    var password = document.getElementById('passwordInput').value;
-      fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-           username: email,
-           password: password,
-    }),
-  })
-    .then((response) => response.text())
-    .then((data) => {
-       alert(data); // Alert the response from the server
-       if (data === 'Login successful!') {
-        window.location.href = 'dashboard.html'; // Redirect to the dashboard if login is successful
-                  }
-                })
-                .catch((error) => {
-                  console.error('Error:', error);
-                });
-            }
-          </script>
+ function validateLogin() {
+   var email = document.getElementById('emailInput').value;
+   var password = document.getElementById('passwordInput').value;
 
-            <div class="register">
-                <p>Don't have a account <a href="register.html">Register</a></p>
-            </div>
-            </div>
-        </form>
-    </section>
+   // Store email and password in localStorage
+   localStorage.setItem('email', email);
+   localStorage.setItem('password', password);
+
+   // Alert that the data has been stored locally
+   alert('Email and password stored locally');
+
+   // Proceed with further login logic
+   // Note: Storing passwords in localStorage is not secure and is only for example purposes
+ }
+ </script>
 </body>
 </html>
